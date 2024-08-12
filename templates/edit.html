@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <script src="../static/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Flask GRUD Image</title>
+</head>
+<body>
+
+
+    <div class="container text-light text-center bg-dark p-5">
+        <h1>Edit Product</h1>        
+    </div>
+
+    <div class="container p-4">
+        <form method="post" enctype="multipart/form-data">
+            <input type="hidden" value="{{product[0]}}">
+            <div class="mb-3">
+              <label for="name" class="form-label">Product Name</label>
+              <input type="text" name="name" value="{{product[1]}}" class="form-control" id="name" aria-describedby="emailHelp">
+            </div>
+
+            <div class="mb-3">
+                <img src="/static/uploads/{{product[4]}}" alt="">
+            </div>
+
+            <div class="mb-3">
+              <label for="image" class="form-label">Select new image</label>
+              <input type="file" class="form-control" name="image" id="image">
+            </div>
+
+            <div class="mb-3">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description">
+                    {{product[2]}}
+                </textarea>
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Submit</button>
+        </form>
+    </div>
+</body>
+</html>
